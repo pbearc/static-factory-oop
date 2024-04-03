@@ -22,7 +22,7 @@ public class Application {
         World world = new World(new Display());
 
         FancyGroundFactory groundFactory = new FancyGroundFactory(new Dirt(),
-                new Wall(), new Floor(), new Puddle());
+                new Wall(), new Floor(), new Puddle(), new Inheritree());
 
         List<String> map = Arrays.asList(
                         "...~~~~.........~~~...........",
