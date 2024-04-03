@@ -1,9 +1,9 @@
-package game;
+package game.grounds;
 
-import edu.monash.fit2099.demo.conwayslife.Status;
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
+import game.items.Fruit;
 
 import java.util.ArrayList;
 import java.util.Collections;

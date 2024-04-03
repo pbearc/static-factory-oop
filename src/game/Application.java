@@ -7,6 +7,11 @@ import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
+import game.actors.HuntsmanSpider;
+import game.actors.Player;
+import game.grounds.*;
+import game.items.LargeBolt;
+import game.items.MetalSheet;
 
 /**
  * The main class to start the game.
@@ -22,23 +27,23 @@ public class Application {
         World world = new World(new Display());
 
         FancyGroundFactory groundFactory = new FancyGroundFactory(new Dirt(),
-                new Wall(), new Floor(), new Puddle(), new Inheritree());
+                new Wall(), new Floor(), new Puddle(), new Inheritree(), new Crater());
 
         List<String> map = Arrays.asList(
                         "...~~~~.........~~~...........",
                         "...~~~~.......................",
-                        "...~~~........................",
+                        "...~~~.........u..............",
                         "..............................",
                         ".............#####............",
                         ".............#___#...........~",
                         ".............#___#..........~~",
                         ".............##_##.........~~~",
                         ".................~~........~~~",
-                        "................~~~~....t..~~~",
+                        "................~~~~.......~~~",
                         ".............~~~~~~~........~~",
                         "......~.....~~~~~~~~.......t.~",
                         ".....~~~...~~~~~~~~~....t.....",
-                        ".....~~~~~~~~~~~~~~~~........~",
+                        ".....~~~~~~~~~~~~~~~~......t.~",
                         ".....~~~~~~~~~~~~~~~~~~~....~~");
 
         GameMap gameMap = new GameMap(groundFactory, map);
