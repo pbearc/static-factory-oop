@@ -5,6 +5,10 @@ import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Inheritree extends Ground {
 
     private int age = 0;
@@ -42,7 +46,10 @@ public class Inheritree extends Ground {
 
     private String produceFruit(Location location, String fruitName, char fruitChar, double probability){
         if (Math.random() <= probability){
-            for (Exit exit : location.getExits()) {
+            List<Exit> exits = new ArrayList<>(location.getExits());
+            Collections.shuffle(exits); // Shuffle the list of exits
+
+            for (Exit exit : exits) {
                 if(!exit.getDestination().containsAnActor()){
                     exit.getDestination().addItem(new Fruit(fruitName, fruitChar));
                     return "A " + fruitName + " is produced";
