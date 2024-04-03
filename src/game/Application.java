@@ -54,6 +54,12 @@ public class Application {
         }
 
         gameMap.at(7, 9).addActor(new HuntsmanSpider());
+        gameMap.at(3, 9).addItem(new LargeBolt());
+        gameMap.at(18, 2).addItem(new LargeBolt());
+        gameMap.at(24, 10).addItem(new LargeBolt());
+        gameMap.at(6, 3).addItem(new MetalSheet());
+        gameMap.at(22, 6).addItem(new MetalSheet());
+        gameMap.at(7, 13).addItem(new MetalSheet());
 
         Player player = new Player("Intern", '@', 4);
         world.addPlayer(player, gameMap.at(15, 6));
