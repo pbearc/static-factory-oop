@@ -3,7 +3,9 @@ package game.grounds;
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
+import game.items.BigFruit;
 import game.items.Fruit;
+import game.items.SmallFruit;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,21 +40,26 @@ public class Inheritree extends Ground {
 
         // Produce fruits
         if (this.getDisplayChar() == SAPLING_CHAR) {
-            produceFruit(location, SMALL_FRUIT_NAME, SMALL_FRUIT_CHAR, SMALL_FRUIT_PROBABILITY);
+            produceFruit(location, SMALL_FRUIT_PROBABILITY);
         } else if (this.getDisplayChar() == MATURE_CHAR) {
-            produceFruit(location, LARGE_FRUIT_NAME, LARGE_FRUIT_CHAR, LARGE_FRUIT_PROBABILITY);
+            produceFruit(location, LARGE_FRUIT_PROBABILITY);
         }
     }
 
-    private String produceFruit(Location location, String fruitName, char fruitChar, double probability){
-        if (Math.random() <= probability){
+    private String produceFruit(Location location, double probability) {
+        if (Math.random() <= probability) {
             List<Exit> exits = new ArrayList<>(location.getExits());
             Collections.shuffle(exits); // Shuffle the list of exits
 
             for (Exit exit : exits) {
-                if(!exit.getDestination().containsAnActor()){
-                    exit.getDestination().addItem(new Fruit(fruitName, fruitChar));
-                    return "A " + fruitName + " is produced";
+                if (!exit.getDestination().containsAnActor()) {
+                    if (this.getDisplayChar() == SAPLING_CHAR) {
+                        exit.getDestination().addItem(new SmallFruit());
+                        return "A Small Fruit is produced";
+                    } else if (this.getDisplayChar() == MATURE_CHAR) {
+                        exit.getDestination().addItem(new BigFruit());
+                        return "A Big Fruit is produced";
+                    }
                 }
             }
         }
