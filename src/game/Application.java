@@ -12,6 +12,7 @@ import game.actors.Player;
 import game.grounds.*;
 import game.items.LargeBolt;
 import game.items.MetalSheet;
+import game.weapons.MetalPipe;
 
 /**
  * The main class to start the game.
@@ -65,6 +66,12 @@ public class Application {
         gameMap.at(6, 3).addItem(new MetalSheet());
         gameMap.at(22, 6).addItem(new MetalSheet());
         gameMap.at(7, 13).addItem(new MetalSheet());
+        gameMap.at(15, 8).addItem(new MetalPipe());
+
+        gameMap.at(7, 9).addActor(new HuntsmanSpider());
+        gameMap.at(12, 9).addActor(new HuntsmanSpider());
+        gameMap.at(13, 9).addActor(new HuntsmanSpider());
+        gameMap.at(14, 9).addActor(new HuntsmanSpider());
 
         Player player = new Player("Intern", '@', 4);
         world.addPlayer(player, gameMap.at(15, 6));
