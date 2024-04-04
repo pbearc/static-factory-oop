@@ -6,6 +6,7 @@ import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.displays.Menu;
+import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
 import game.capabilities.Status;
 
 /**
@@ -38,4 +39,10 @@ public class Player extends Actor {
         Menu menu = new Menu(actions);
         return menu.showMenu(this, display);
     }
+
+    @Override
+    public IntrinsicWeapon getIntrinsicWeapon() {
+        return new IntrinsicWeapon(1, "hits with bare hand", 5);
+    }
+
 }
