@@ -14,4 +14,18 @@ public abstract class Fruit extends Item implements Consumable{
     public Fruit(String fruitName, char displayChar){
         super(fruitName, displayChar, true);
     }
+
+    @Override
+    public boolean consumed(Player player, GameMap map){
+        return true;
+    }
+
+    @Override
+    public ActionList allowableActions(Actor actor) {
+        ActionList actions = super.allowableActions(actor);
+        actions.add(new ConsumeAction(this));
+        return actions;
+    }
+
+
 }
