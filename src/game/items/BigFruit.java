@@ -8,5 +8,11 @@ public class BigFruit extends Fruit{
         super("Big Fruit", 'O');
     }
 
-
+    @Override
+    public boolean consumed(Player player, GameMap map) {
+        player.heal(2);
+        player.removeItemFromInventory(this);
+        map.locationOf(player).removeItem(this);
+        return true;
+    }
 }
