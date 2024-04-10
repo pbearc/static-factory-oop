@@ -34,7 +34,7 @@ public class WanderBehaviour implements Behaviour {
 
         for (Exit exit : map.locationOf(actor).getExits()) {
             Location destination = exit.getDestination();
-            if (destination.canActorEnter(actor)) {
+            if (destination.canActorEnter(actor) && !isInsideSpaceship(destination.x(), destination.y())) {
                 actions.add(exit.getDestination().getMoveAction(actor, "around", exit.getHotKey()));
             }
         }
@@ -46,5 +46,9 @@ public class WanderBehaviour implements Behaviour {
             return null;
         }
 
+    }
+
+    public boolean isInsideSpaceship(int x, int y){
+        return x >= 13 && x <= 17 && y >= 4 && y <= 7;
     }
 }
