@@ -50,23 +50,23 @@ public class Application {
         GameMap gameMap = new GameMap(groundFactory, map);
         world.addGameMap(gameMap);
 
-        for (String line : FancyMessage.TITLE.split("\n")) {
-            new Display().println(line);
-            try {
-                Thread.sleep(200);
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }
+//        for (String line : FancyMessage.TITLE.split("\n")) {
+//            new Display().println(line);
+//            try {
+//                Thread.sleep(200);
+//            } catch (Exception exception) {
+//                exception.printStackTrace();
+//            }
+//        }
 
-        gameMap.at(7, 9).addActor(new HuntsmanSpider());
-        gameMap.at(3, 9).addItem(new LargeBolt());
-        gameMap.at(18, 2).addItem(new LargeBolt());
-        gameMap.at(24, 10).addItem(new LargeBolt());
+        gameMap.at(12, 10).addItem(new LargeBolt());
+        gameMap.at(13, 10).addItem(new LargeBolt());
+        gameMap.at(14, 10).addItem(new LargeBolt());
         gameMap.at(6, 3).addItem(new MetalSheet());
         gameMap.at(22, 6).addItem(new MetalSheet());
         gameMap.at(7, 13).addItem(new MetalSheet());
-        gameMap.at(15, 8).addItem(new MetalPipe());
+        gameMap.at(15, 8).addActor(new HuntsmanSpider());
+        gameMap.at(15, 9).addItem(new MetalPipe());
 
         gameMap.at(7, 9).addActor(new HuntsmanSpider());
         gameMap.at(12, 9).addActor(new HuntsmanSpider());
