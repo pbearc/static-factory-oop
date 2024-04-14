@@ -38,7 +38,7 @@ public class HuntsmanSpider extends Actor {
     }
 
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
-        ActionList actions = new ActionList();
+        ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
         if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
             this.behaviours.put(0, new AttackBehaviour(otherActor));
 
@@ -50,7 +50,7 @@ public class HuntsmanSpider extends Actor {
                 // Check if the item has the "hit_with_pipe" status
                 if (item.hasCapability(Status.HIT_WITH_PIPE)) {
                     // Pass the item to the AttackAction constructor when creating the attack action
-                    actions.add(new AttackAction(this, direction, (Weapon) item));
+                    actions.add(new AttackAction(this, direction, (Weapon) item));  // player can hit spider with metalpipe
                     break; // Stop iterating after finding the first item with the status
                 }
             }
