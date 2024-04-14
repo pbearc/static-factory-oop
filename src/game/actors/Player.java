@@ -3,6 +3,7 @@ package game.actors;
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
+import edu.monash.fit2099.engine.actors.attributes.BaseActorAttributes;
 import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.displays.Menu;
@@ -36,6 +37,11 @@ public class Player extends Actor {
             return lastAction.getNextAction();
 
         // return/print the console menu
+        // return/print the console menu
+        String playerInfo = this.name + "\nHP: "+ this.getAttribute(BaseActorAttributes.HEALTH) + "/" +
+                this.getAttributeMaximum(BaseActorAttributes.HEALTH);
+//        System.out.println(retStr);
+        display.println(playerInfo);
         Menu menu = new Menu(actions);
         return menu.showMenu(this, display);
     }
