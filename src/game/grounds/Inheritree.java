@@ -16,11 +16,6 @@ public class Inheritree extends Ground {
     private int age = 0;
     private static final char SAPLING_CHAR = 't';
     private static final char MATURE_CHAR = 'T';
-    private static final char SMALL_FRUIT_CHAR = 'o';
-    private static final char LARGE_FRUIT_CHAR = 'O';
-
-    private static final String SMALL_FRUIT_NAME = "Small Fruit";
-    private static final String LARGE_FRUIT_NAME = "Big Fruit";
 
     private static final double SMALL_FRUIT_PROBABILITY = 0.3;
     private static final double LARGE_FRUIT_PROBABILITY = 0.2;
