@@ -4,6 +4,7 @@ import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.weapons.Weapon;
+import game.utils.FancyMessage;
 
 import java.util.Random;
 
@@ -66,6 +67,7 @@ public class AttackAction extends Action {
         String result = actor + " " + weapon.verb() + " " + target + " for " + damage + " damage.";
         target.hurt(damage);
         if (!target.isConscious()) {
+            result += "\n" + FancyMessage.YOU_ARE_FIRED;
             result += "\n" + target.unconscious(actor, map);
         }
 
