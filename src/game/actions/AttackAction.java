@@ -3,6 +3,7 @@ package game.actions;
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
+import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.weapons.Weapon;
 import game.utils.FancyMessage;
 
@@ -30,6 +31,8 @@ public class AttackAction extends Action {
      */
     private Weapon weapon;
 
+    private Location location;
+
     /**
      * Constructor.
      *
@@ -51,6 +54,12 @@ public class AttackAction extends Action {
     public AttackAction(Actor target, String direction) {
         this.target = target;
         this.direction = direction;
+    }
+
+    public AttackAction(Actor target, Location location, Weapon weapon){
+        this.target = target;
+        this.location = location;
+        this.weapon = weapon;
     }
 
     @Override
@@ -77,6 +86,11 @@ public class AttackAction extends Action {
 
     @Override
     public String menuDescription(Actor actor) {
-        return actor + " attacks " + target + " at " + direction + " with " + (weapon != null ? weapon : "bare hand");
+        if (this.location != null){
+            return actor + " attacks " + target + " at " + location.toString() + " with " + (weapon != null ? weapon : "Intrinsic Weapon");
+        }
+        else {
+            return actor + " attacks " + target + " at " + direction + " with " + (weapon != null ? weapon : "Intrinsic Weapon");
+        }
     }
 }
