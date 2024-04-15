@@ -26,7 +26,7 @@ public class Inheritree extends Ground {
     public void tick(Location location) {
 //        super.tick(location);
         age++;
-        if (age >= 5 && this.getDisplayChar() == SAPLING_CHAR){
+        if (age > 5 && this.getDisplayChar() == SAPLING_CHAR){
             setDisplayChar(MATURE_CHAR);
         }
 
