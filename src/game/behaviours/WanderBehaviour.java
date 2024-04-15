@@ -9,6 +9,7 @@ import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.actors.Behaviour;
+import game.capabilities.GroundType;
 
 /**
  * Created by:
@@ -34,7 +35,7 @@ public class WanderBehaviour implements Behaviour {
 
         for (Exit exit : map.locationOf(actor).getExits()) {
             Location destination = exit.getDestination();
-            if (destination.canActorEnter(actor) && !isInsideSpaceship(destination.x(), destination.y())) {
+            if (destination.canActorEnter(actor) && !destination.getGround().hasCapability(GroundType.RESTRICTED)) {
                 actions.add(exit.getDestination().getMoveAction(actor, "around", exit.getHotKey()));
             }
         }
@@ -48,7 +49,4 @@ public class WanderBehaviour implements Behaviour {
 
     }
 
-    public boolean isInsideSpaceship(int x, int y){
-        return x >= 13 && x <= 17 && y >= 4 && y <= 7;
-    }
 }

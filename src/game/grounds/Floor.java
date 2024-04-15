@@ -1,6 +1,7 @@
 package game.grounds;
 
 import edu.monash.fit2099.engine.positions.Ground;
+import game.capabilities.GroundType;
 
 /**
  * A class that represents the floor inside a building.
@@ -12,5 +13,6 @@ import edu.monash.fit2099.engine.positions.Ground;
 public class Floor extends Ground {
     public Floor() {
         super('_');
+        addCapability(GroundType.RESTRICTED);
     }
 }
