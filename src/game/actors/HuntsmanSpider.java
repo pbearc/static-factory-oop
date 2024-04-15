@@ -11,6 +11,7 @@ import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
 import edu.monash.fit2099.engine.weapons.Weapon;
 import game.behaviours.AttackBehaviour;
+import game.capabilities.ActorType;
 import game.capabilities.Status;
 import game.behaviours.WanderBehaviour;
 import game.actions.AttackAction;
@@ -25,6 +26,7 @@ public class HuntsmanSpider extends Actor {
     public HuntsmanSpider() {
         super("Huntsman Spider", '8', 1);
         this.behaviours.put(999, new WanderBehaviour());
+        this.addCapability(ActorType.SPIDER);
     }
 
     @Override
