@@ -10,6 +10,7 @@ public class ConsumeAction extends Action {
 
     Consumable item;
 
+
     public ConsumeAction(Consumable item){
         this.item = item;
     }
@@ -17,11 +18,9 @@ public class ConsumeAction extends Action {
     @Override
     public String execute(Actor actor, GameMap map) {
         Player player = (Player) actor;
-        boolean retVal = item.consumed(player,map);
-        if (!retVal){
-            return "The" + item + "is empty.";
-        }
-        return menuDescription(player);
+        item.consumed(player,map);
+
+        return player + " consumes " + item + " and " + item + " heals " + player + "by " + item.getPoint() + " hit point";
     }
 
     @Override

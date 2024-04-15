@@ -6,4 +6,6 @@ import game.actors.Player;
 public interface Consumable {
 
     boolean consumed(Player player, GameMap map);
+
+    int getPoint();
 }
