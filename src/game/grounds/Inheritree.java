@@ -50,6 +50,7 @@ public class Inheritree extends Ground {
                     } else if (this.getDisplayChar() == MATURE_CHAR) {
                         exit.getDestination().addItem(new BigFruit());
                     }
+                    break; // Stop after adding fruit to one destination
                 }
             }
         }
