@@ -13,13 +13,16 @@ public class AttackBehaviour implements Behaviour {
 
     private final Actor target;
     private Weapon weapon;
+    private String direction;
 
-    public AttackBehaviour(Actor subject) {
+    public AttackBehaviour(Actor subject, String direction) {
         this.target = subject;
+        this.direction = direction;
     }
 
-    public AttackBehaviour(Actor subject, Weapon weapon) {
+    public AttackBehaviour(Actor subject, String direction, Weapon weapon) {
         this.target = subject;
+        this.direction = direction;
         this.weapon = weapon;
     }
 
@@ -33,7 +36,7 @@ public class AttackBehaviour implements Behaviour {
             // Check if the exit's destination is the same as the target's location
             if (exit.getDestination().equals(targetLocation)) {
                 // If the target is within the actor's exits, return an attack action
-                return new AttackAction(target, "surrounding");
+                return new AttackAction(target, this.direction);
             }
         }
 

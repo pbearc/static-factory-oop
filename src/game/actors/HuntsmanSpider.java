@@ -42,7 +42,7 @@ public class HuntsmanSpider extends Actor {
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
         if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
-            this.behaviours.put(0, new AttackBehaviour(otherActor));
+            this.behaviours.put(0, new AttackBehaviour(otherActor, direction));
 
             // Retrieve the player's inventory
             List<Item> playerInventory = otherActor.getItemInventory();
