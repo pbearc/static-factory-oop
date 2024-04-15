@@ -3,6 +3,7 @@ package game.actions;
 import edu.monash.fit2099.engine.actions.Action;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
+import game.capabilities.ActorType;
 import game.utils.FancyMessage;
 
 public class DeathAction extends Action {
@@ -22,7 +23,9 @@ public class DeathAction extends Action {
     @Override
     public String menuDescription(Actor target) {
         String result = "";
-        result += "\n" + FancyMessage.YOU_ARE_FIRED;
+        if (target.hasCapability(ActorType.PLAYER)){
+            result += "\n" + FancyMessage.YOU_ARE_FIRED;
+        }
         result += "\n" + target.unconscious(this.attacker, this.mapDie);
         return result;
     }
