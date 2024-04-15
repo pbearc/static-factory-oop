@@ -37,7 +37,6 @@ public class Player extends Actor {
             return lastAction.getNextAction();
 
         // return/print the console menu
-        // return/print the console menu
         String playerInfo = this.name + "\nHP: "+ this.getAttribute(BaseActorAttributes.HEALTH) + "/" +
                 this.getAttributeMaximum(BaseActorAttributes.HEALTH);
 //        System.out.println(retStr);
