@@ -40,10 +40,6 @@ public class HuntsmanSpider extends Actor {
         return new DoNothingAction();
     }
 
-    public void addBehaviour(int key, Behaviour behaviour) {
-        behaviours.put(key, behaviour);
-    }
-
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
         if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
