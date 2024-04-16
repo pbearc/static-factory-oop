@@ -8,5 +8,5 @@ package game.capabilities;
  */
 public enum Status {
     HOSTILE_TO_ENEMY,
-    HIT_WITH_PIPE,
+//    HIT_WITH_PIPE,
 }
