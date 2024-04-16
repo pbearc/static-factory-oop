@@ -14,13 +14,17 @@ public class MetalPipe extends WeaponItem {
 
     public MetalPipe() {
         super("Metal Pipe", '!', 1, "hits", 20);
-        this.addCapability(Status.HIT_WITH_PIPE);
+//        this.addCapability(Status.HIT_WITH_PIPE);
     }
 
     @Override
     public ActionList allowableActions(Actor otherActor, Location location) {
         ActionList actions = super.allowableActions(otherActor, location);
-        actions.add(new AttackAction(otherActor, location, this));
+        // Check if the otherActor is not hostile to enemies
+        if (!otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
+            // Add the AttackAction only if the otherActor is not hostile to enemies
+            actions.add(new AttackAction(otherActor, location, this));
+        }
         return actions;
 
     }
