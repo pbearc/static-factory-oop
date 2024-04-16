@@ -26,6 +26,7 @@ public class HuntsmanSpider extends Actor {
     public HuntsmanSpider() {
         super("Huntsman Spider", '8', 1);
         this.behaviours.put(999, new WanderBehaviour());
+        this.behaviours.put(0, new AttackBehaviour());
         this.addCapability(ActorType.SPIDER);
     }
 
@@ -46,7 +47,7 @@ public class HuntsmanSpider extends Actor {
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
         if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
-            this.behaviours.put(0, new AttackBehaviour(otherActor, direction));
+//            this.behaviours.put(0, new AttackBehaviour(otherActor, direction));
 
 //            // Retrieve the player's inventory
 //            List<Item> playerInventory = otherActor.getItemInventory();
