@@ -5,17 +5,11 @@ import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.actors.attributes.BaseActorAttributes;
 import edu.monash.fit2099.engine.displays.Display;
-import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.displays.Menu;
 import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
-import edu.monash.fit2099.engine.weapons.Weapon;
-import game.actions.AttackAction;
-import game.behaviours.AttackBehaviour;
 import game.capabilities.ActorType;
 import game.capabilities.Status;
-
-import java.util.List;
 
 /**
  * Class representing the Player.
@@ -51,18 +45,6 @@ public class Player extends Actor {
         Menu menu = new Menu(actions);
         return menu.showMenu(this, display);
     }
-
-    public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
-        ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
-//        if (!otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {  //otherActor will be Spider in this case
-//
-//            actions.add(new AttackAction(otherActor, direction));
-//
-//        }
-        actions.add(new AttackAction(otherActor, direction));
-        return actions;
-    }
-
 
     @Override
     public IntrinsicWeapon getIntrinsicWeapon() {
