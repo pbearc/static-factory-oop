@@ -7,7 +7,6 @@ import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
-import game.actors.HuntsmanSpider;
 import game.actors.Player;
 import game.grounds.*;
 import game.items.LargeBolt;
@@ -37,10 +36,10 @@ public class Application {
                         "..............................",
                         ".............#####............",
                         ".............#___#...........~",
-                        ".............#___#..........~~",
-                        ".............##_##.........~~~",
-                        ".................~~........~~~",
-                        "................~~~~.......~~~",
+                        "...u.........#___#......u...~~",
+                        "...u.........##_##......u..~~~",
+                        "...u............u~~.....u..~~~",
+                        "..u......u....u.~~~~....u..~~~",
                         ".............~~~~~~~........~~",
                         "......~.....~~~~~~~~.......t.~",
                         ".....~~~...~~~~~~~~~....t.....",
@@ -65,13 +64,14 @@ public class Application {
         gameMap.at(6, 3).addItem(new MetalSheet());
         gameMap.at(22, 6).addItem(new MetalSheet());
         gameMap.at(7, 13).addItem(new MetalSheet());
-        gameMap.at(15, 8).addActor(new HuntsmanSpider());
+//        gameMap.at(15, 8).addActor(new HuntsmanSpider());
         gameMap.at(15, 9).addItem(new MetalPipe());
 
-        gameMap.at(7, 9).addActor(new HuntsmanSpider());
-        gameMap.at(12, 9).addActor(new HuntsmanSpider());
-        gameMap.at(13, 9).addActor(new HuntsmanSpider());
-        gameMap.at(14, 9).addActor(new HuntsmanSpider());
+//        gameMap.at(14, 9).addActor(new HuntsmanSpider());
+//        gameMap.at(7, 9).addActor(new HuntsmanSpider());
+//        gameMap.at(12, 9).addActor(new HuntsmanSpider());
+//        gameMap.at(13, 9).addActor(new HuntsmanSpider());
+
 
         Player player = new Player("Intern", '@', 4);
         world.addPlayer(player, gameMap.at(15, 6));
