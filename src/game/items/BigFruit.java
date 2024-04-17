@@ -1,9 +1,12 @@
 package game.items;
 
+import edu.monash.fit2099.engine.actions.ActionList;
+import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.positions.GameMap;
+import game.actions.ConsumeAction;
 import game.actors.Player;
 
-public class BigFruit extends Fruit{
+public class BigFruit extends Fruit implements Consumable{
     private int healPoint;
     public BigFruit() {
         super("Big Fruit", 'O');
@@ -19,5 +22,12 @@ public class BigFruit extends Fruit{
         player.removeItemFromInventory(this);
         map.locationOf(player).removeItem(this);
         return true;
+    }
+
+    @Override
+    public ActionList allowableActions(Actor actor) {
+        ActionList actions = super.allowableActions(actor);
+        actions.add(new ConsumeAction(this));
+        return actions;
     }
 }
