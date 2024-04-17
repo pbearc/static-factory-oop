@@ -4,7 +4,7 @@ import edu.monash.fit2099.engine.positions.Ground;
 import edu.monash.fit2099.engine.positions.Location;
 import game.actors.HuntsmanSpider;
 
-public class Crater extends Ground {
+public class Crater extends SpawningGround {
 
     public Crater() {
         super('u');

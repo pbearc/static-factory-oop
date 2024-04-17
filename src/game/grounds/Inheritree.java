@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Inheritree extends Ground {
+public class Inheritree extends SpawningGround {
 
     private int age = 0;
     private static final char SAPLING_CHAR = 't';
