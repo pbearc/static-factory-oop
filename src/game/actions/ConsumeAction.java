@@ -20,7 +20,7 @@ public class ConsumeAction extends Action {
         Player player = (Player) actor;
         item.consumed(player,map);
 
-        return player + " consumes " + item + " and " + item + " heals " + player + "by " + item.getPoint() + " hit point";
+        return player + " consumes " + item + " and " + item + " heals " + player + " by " + item.getEffectValue() + " hit point";
     }
 
     @Override

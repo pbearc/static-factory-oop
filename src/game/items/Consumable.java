@@ -7,5 +7,5 @@ public interface Consumable {
 
     boolean consumed(Player player, GameMap map);
 
-    int getPoint();
+    int getEffectValue();
 }
