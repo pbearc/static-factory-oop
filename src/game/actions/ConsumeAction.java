@@ -17,15 +17,15 @@ public class ConsumeAction extends Action {
 
     @Override
     public String execute(Actor actor, GameMap map) {
-        Player player = (Player) actor;
-        item.consumed(player,map);
+//        Player player = (Player) actor;
+        item.consumed(actor,map);
 
-        return player + " consumes " + item + " and " + item + " heals " + player + " by " + item.getEffectValue() + " hit point";
+        return actor + " consumes " + item + " and " + item + " heals " + actor + " by " + item.getEffectValue() + " hit point";
     }
 
     @Override
     public String menuDescription(Actor actor) {
-        Player player = (Player) actor;
-        return player + " consumes " + item;
+//        Player player = (Player) actor;
+        return actor + " consumes " + item;
     }
 }
