@@ -15,7 +15,7 @@ public class SaplingTree extends Inheritree{
         this.fruitToBeSpawn = new SmallFruit();
     }
 
-    public void produceFruit2(Location location, int age){
+    public void produceFruit(Location location, int age){
         if (age > 5){
             location.setGround(new MatureTree());
         }

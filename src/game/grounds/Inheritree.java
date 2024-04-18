@@ -13,10 +13,10 @@ public abstract class Inheritree extends SpawningGround {
     @Override
     public void tick(Location location) {
         age++;
-        produceFruit2(location, age);
+        produceFruit(location, age);
     }
 
-    public void produceFruit2(Location location, int age) {
+    public void produceFruit(Location location, int age) {
 
     }
 }

@@ -15,7 +15,7 @@ public class MatureTree extends Inheritree{
         this.fruitToBeSpawn = new BigFruit();
     }
 
-    public void produceFruit2(Location location, int age){
+    public void produceFruit(Location location, int age){
         if (Math.random() <= 0.3) {
             List<Exit> exits = new ArrayList<>(location.getExits());
             Collections.shuffle(exits); // Shuffle the list of exits
