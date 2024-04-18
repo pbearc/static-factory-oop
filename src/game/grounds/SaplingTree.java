@@ -2,8 +2,6 @@ package game.grounds;
 
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Location;
-import game.items.BigFruit;
-import game.items.Fruit;
 import game.items.SmallFruit;
 
 import java.util.ArrayList;
@@ -18,7 +16,7 @@ public class SaplingTree extends Inheritree{
     }
 
     public void produceFruit2(Location location, int age){
-        if (age >= 5){
+        if (age > 5){
             location.setGround(new MatureTree());
         }
         if (Math.random() <= 0.3) {
