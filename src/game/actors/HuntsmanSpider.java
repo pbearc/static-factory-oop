@@ -6,21 +6,20 @@ import edu.monash.fit2099.engine.actions.DoNothingAction;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.actors.Behaviour;
 import edu.monash.fit2099.engine.displays.Display;
-import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
+import edu.monash.fit2099.engine.positions.Location;
 import edu.monash.fit2099.engine.weapons.IntrinsicWeapon;
-import edu.monash.fit2099.engine.weapons.Weapon;
 import game.behaviours.AttackBehaviour;
 import game.capabilities.ActorType;
 import game.capabilities.Status;
 import game.behaviours.WanderBehaviour;
 import game.actions.AttackAction;
+import game.grounds.SpawnableActor;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
-public class HuntsmanSpider extends Actor {
+public class HuntsmanSpider extends Actor implements SpawnableActor {
     private Map<Integer, Behaviour> behaviours = new HashMap<>();
 
     public HuntsmanSpider() {
@@ -68,4 +67,8 @@ public class HuntsmanSpider extends Actor {
         return new IntrinsicWeapon(1, "kicks", 25);
     }
 
+    @Override
+    public void spawn(Location location) {
+        location.addActor(new HuntsmanSpider());
+    }
 }
