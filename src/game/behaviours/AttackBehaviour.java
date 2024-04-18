@@ -6,26 +6,10 @@ import edu.monash.fit2099.engine.actors.Behaviour;
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.Location;
-import edu.monash.fit2099.engine.weapons.Weapon;
 import game.actions.AttackAction;
 import game.capabilities.Status;
 
 public class AttackBehaviour implements Behaviour {
-
-//    private final Actor target;
-//    private Weapon weapon;
-//    private String direction;
-//
-//    public AttackBehaviour(Actor subject, String direction) {
-//        this.target = subject;
-//        this.direction = direction;
-//    }
-//
-//    public AttackBehaviour(Actor subject, String direction, Weapon weapon) {
-//        this.target = subject;
-//        this.direction = direction;
-//        this.weapon = weapon;
-//    }
 
     public Action getAction(Actor actor, GameMap map) {
         // Get the location of the actor and the target

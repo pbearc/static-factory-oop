@@ -31,8 +31,4 @@ public class ConsumableFruit extends Item implements Consumable{
         return actions;
     }
 
-//    @Override
-//    public int getPoint() {
-//        return 0;
-//    }
 }

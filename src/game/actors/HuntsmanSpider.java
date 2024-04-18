@@ -42,20 +42,6 @@ public class HuntsmanSpider extends Actor implements SpawnableActor {
     public ActionList allowableActions(Actor otherActor, String direction, GameMap map) {
         ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
         if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
-//            this.behaviours.put(0, new AttackBehaviour(otherActor, direction));
-
-//            // Retrieve the player's inventory
-//            List<Item> playerInventory = otherActor.getItemInventory();
-//
-//            // Iterate over each item in the player's inventory
-//            for (Item item : playerInventory) {
-//                // Check if the item has the "hit_with_pipe" status
-//                if (item.hasCapability(Status.HIT_WITH_PIPE)) {
-//                    // Pass the item to the AttackAction constructor when creating the attack action
-//                    actions.add(new AttackAction(this, direction, (Weapon) item));  // player can hit spider with metalpipe
-//                    break; // Stop iterating after finding the first item with the status
-//                }
-//            }
             actions.add(new AttackAction(this, direction));
 
         }

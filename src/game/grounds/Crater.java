@@ -14,7 +14,6 @@ public class Crater extends SpawningGround {
     @Override
     public void tick(Location location) {
         if(!location.containsAnActor() && Math.random() <= 0.05){
-//            location.addActor(new HuntsmanSpider());
             spawnableActor.spawn(location);
         }
 
