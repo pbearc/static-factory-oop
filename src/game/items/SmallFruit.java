@@ -2,17 +2,25 @@ package game.items;
 
 import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
+import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
+import edu.monash.fit2099.engine.positions.Location;
 import game.actions.ConsumeAction;
 import game.actors.Player;
 
-public class SmallFruit extends ConsumableFruit{
+public class SmallFruit extends ConsumableFruit implements SpawnableItem{
 
-//    private int healPoint;
+
     public SmallFruit() {
         super("Small Fruit", 'o', 1);
-//        this.healPoint = 1;
+
     }
+
+    public void spawn(Location location){
+        location.addItem(new SmallFruit());
+    }
+
+
 //
 //    public int getPoint(){
 //        return this.healPoint;
