@@ -18,11 +18,10 @@ public class ConsumableFruit extends Item implements Consumable{
     }
 
     @Override
-    public boolean consumed(Actor player, GameMap map) {
+    public void consumed(Actor player, GameMap map) {
         player.heal(this.getEffectValue());
         player.removeItemFromInventory(this);
         map.locationOf(player).removeItem(this);
-        return true;
     }
 
     @Override
