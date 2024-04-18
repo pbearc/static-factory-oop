@@ -7,6 +7,7 @@ import edu.monash.fit2099.engine.displays.Display;
 import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
+import game.actors.HuntsmanSpider;
 import game.actors.Player;
 import game.grounds.*;
 import game.items.LargeBolt;
@@ -27,19 +28,19 @@ public class Application {
         World world = new World(new Display());
 
         FancyGroundFactory groundFactory = new FancyGroundFactory(new Dirt(),
-                new Wall(), new Floor(), new Puddle(), new Inheritree(), new Crater());
+                new Wall(), new Floor(), new Puddle(), new Inheritree());
 
         List<String> map = Arrays.asList(
                         "...~~~~.........~~~...........",
                         "...~~~~.......................",
-                        "...~~~.........u..............",
+                        "...~~~........................",
                         "..............................",
                         ".............#####............",
                         ".............#___#...........~",
-                        "...u.........#___#......u...~~",
-                        "...u.........##_##......u..~~~",
-                        "...u............u~~.....u..~~~",
-                        "..u......u....u.~~~~....u..~~~",
+                        ".............#___#..........~~",
+                        ".............##_##.........~~~",
+                        ".................~~........~~~",
+                        "................~~~~.......~~~",
                         ".............~~~~~~~........~~",
                         "......~.....~~~~~~~~.......t.~",
                         ".....~~~...~~~~~~~~~....t.....",
@@ -66,6 +67,8 @@ public class Application {
         gameMap.at(7, 13).addItem(new MetalSheet());
 //        gameMap.at(15, 8).addActor(new HuntsmanSpider());
         gameMap.at(15, 9).addItem(new MetalPipe());
+        Crater crater = new Crater(new HuntsmanSpider());
+        gameMap.at(1,1).setGround(crater);
 
 //        gameMap.at(14, 9).addActor(new HuntsmanSpider());
 //        gameMap.at(7, 9).addActor(new HuntsmanSpider());
