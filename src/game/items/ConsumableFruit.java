@@ -2,14 +2,14 @@ package game.items;
 
 import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
+import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.actions.ConsumeAction;
-import game.actors.Player;
 
-public class ConsumableFruit extends Fruit implements Consumable{
+public class ConsumableFruit extends Item implements Consumable{
     private int effectValue;
     public ConsumableFruit(String fruitName, char displayChar, int effectValue) {
-        super(fruitName, displayChar);
+        super(fruitName, displayChar, true);
         this.effectValue = effectValue;
     }
 
@@ -18,7 +18,7 @@ public class ConsumableFruit extends Fruit implements Consumable{
     }
 
     @Override
-    public boolean consumed(Player player, GameMap map) {
+    public boolean consumed(Actor player, GameMap map) {
         player.heal(this.getEffectValue());
         player.removeItemFromInventory(this);
         map.locationOf(player).removeItem(this);
