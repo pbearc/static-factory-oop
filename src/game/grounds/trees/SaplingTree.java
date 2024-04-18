@@ -1,14 +1,13 @@
-package game.grounds;
+package game.grounds.trees;
 
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Location;
-import game.items.SmallFruit;
-
+import game.items.fruits.SmallFruit;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class SaplingTree extends Inheritree{
+public class SaplingTree extends Inheritree {
     private SmallFruit fruitToBeSpawn;
     public SaplingTree() {
         super('t');

@@ -1,6 +1,7 @@
-package game.grounds;
+package game.grounds.trees;
 
 import edu.monash.fit2099.engine.positions.Location;
+import game.grounds.SpawningGround;
 
 public abstract class Inheritree extends SpawningGround {
 

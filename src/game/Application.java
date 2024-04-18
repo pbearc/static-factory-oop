@@ -10,6 +10,8 @@ import edu.monash.fit2099.engine.positions.World;
 import game.actors.HuntsmanSpider;
 import game.actors.Player;
 import game.grounds.*;
+import game.grounds.trees.MatureTree;
+import game.grounds.trees.SaplingTree;
 import game.items.LargeBolt;
 import game.items.MetalSheet;
 import game.weapons.MetalPipe;

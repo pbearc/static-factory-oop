@@ -1,12 +1,13 @@
-package game.items;
+package game.items.fruits;
 
 import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.actions.ConsumeAction;
+import game.items.Consumable;
 
-public class ConsumableFruit extends Item implements Consumable{
+public class ConsumableFruit extends Item implements Consumable {
     private int effectValue;
     public ConsumableFruit(String fruitName, char displayChar, int effectValue) {
         super(fruitName, displayChar, true);

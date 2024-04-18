@@ -14,7 +14,6 @@ import game.capabilities.ActorType;
 import game.capabilities.Status;
 import game.behaviours.WanderBehaviour;
 import game.actions.AttackAction;
-import game.grounds.SpawnableActor;
 
 import java.util.HashMap;
 import java.util.Map;
