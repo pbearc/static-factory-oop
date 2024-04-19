@@ -11,6 +11,14 @@ import game.capabilities.Status;
 
 public class AttackBehaviour implements Behaviour {
 
+    /**
+     * Returns an AttackAction if a hostile actor is within the actor's vicinity, otherwise returns null.
+     *
+     * @param actor The actor performing the attack.
+     * @param map   The current game map.
+     * @return An AttackAction if a hostile actor is within the actor's vicinity, null otherwise.
+     */
+    @Override
     public Action getAction(Actor actor, GameMap map) {
         // Get the location of the actor and the target
         Location here = map.locationOf(actor);
