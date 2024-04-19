@@ -17,7 +17,5 @@ public abstract class Inheritree extends SpawningGround {
         produceFruit(location, age);
     }
 
-    public void produceFruit(Location location, int age) {
-
-    }
+    public abstract void produceFruit(Location location, int age);
 }
