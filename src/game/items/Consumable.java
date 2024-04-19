@@ -8,4 +8,5 @@ public interface Consumable {
     void consumed(Actor actor, GameMap map);
 
     int getEffectValue();
+    String getEffectDescription();
 }

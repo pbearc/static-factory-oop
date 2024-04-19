@@ -1,6 +1,8 @@
 package game.items.fruits;
 
-public class SmallFruit extends ConsumableFruit {
+import game.items.HealingItem;
+
+public class SmallFruit extends HealingItem {
 
     public SmallFruit() {
         super("Small Fruit", 'o', 1);

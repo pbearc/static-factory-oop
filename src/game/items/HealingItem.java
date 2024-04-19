@@ -1,21 +1,23 @@
-package game.items.fruits;
+package game.items;
 
 import edu.monash.fit2099.engine.actions.ActionList;
 import edu.monash.fit2099.engine.actors.Actor;
 import edu.monash.fit2099.engine.items.Item;
 import edu.monash.fit2099.engine.positions.GameMap;
 import game.actions.ConsumeAction;
-import game.items.Consumable;
 
-public class ConsumableFruit extends Item implements Consumable {
+public abstract class HealingItem extends Item implements Consumable {
     private int effectValue;
-    public ConsumableFruit(String fruitName, char displayChar, int effectValue) {
-        super(fruitName, displayChar, true);
+    public HealingItem(String name, char displayChar, int effectValue) {
+        super(name, displayChar, true);
         this.effectValue = effectValue;
     }
 
     public int getEffectValue(){
         return this.effectValue;
+    }
+    public String getEffectDescription(){
+        return " heals " + this.getEffectValue() + " hit points";
     }
 
     @Override

@@ -18,7 +18,7 @@ public class ConsumeAction extends Action {
     public String execute(Actor actor, GameMap map) {
         item.consumed(actor,map);
 
-        return actor + " consumes " + item + " and " + item + " heals " + actor + " by " + item.getEffectValue() + " hit point";
+        return actor + " consumes " + item + " and " + item + item.getEffectDescription();
     }
 
     @Override
