@@ -2,15 +2,15 @@ package game.grounds.trees;
 
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Location;
-import game.spawners.Spawner;
-import game.spawners.BigFruitSpawner;
+import game.items.itemspawner.ItemSpawner;
+import game.items.itemspawner.BigFruitSpawner;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class MatureTree extends Inheritree {
-    private Spawner fruitToBeSpawn;
+    private ItemSpawner fruitToBeSpawn;
     public MatureTree() {
         super('T');
         this.fruitToBeSpawn = new BigFruitSpawner();

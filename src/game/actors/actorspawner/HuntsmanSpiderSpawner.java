@@ -1,9 +1,9 @@
-package game.spawners;
+package game.actors.actorspawner;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.actors.HuntsmanSpider;
 
-public class SpiderSpawner implements Spawner {
+public class HuntsmanSpiderSpawner implements ActorSpawner {
     @Override
     public void spawn(Location location) {
         location.addActor(new HuntsmanSpider());
