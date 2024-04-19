@@ -8,7 +8,7 @@ import edu.monash.fit2099.engine.positions.FancyGroundFactory;
 import edu.monash.fit2099.engine.positions.GameMap;
 import edu.monash.fit2099.engine.positions.World;
 import game.actors.Player;
-import game.spawners.SpiderSpawner;
+import game.actors.actorspawners.HuntsmanSpiderSpawner;
 import game.grounds.*;
 import game.grounds.trees.MatureTree;
 import game.grounds.trees.SaplingTree;
@@ -69,7 +69,7 @@ public class Application {
         gameMap.at(22, 6).addItem(new MetalSheet());
         gameMap.at(7, 13).addItem(new MetalSheet());
         gameMap.at(15, 9).addItem(new MetalPipe());
-        Crater crater = new Crater(new SpiderSpawner());
+        Crater crater = new Crater(new HuntsmanSpiderSpawner());
         gameMap.at(1,1).setGround(crater);
         gameMap.at(2,2).setGround(crater);
         gameMap.at(3,3).setGround(crater);
