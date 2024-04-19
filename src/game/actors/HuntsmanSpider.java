@@ -25,7 +25,6 @@ public class HuntsmanSpider extends Actor{
         super("Huntsman Spider", '8', 1);
         this.behaviours.put(999, new WanderBehaviour());
         this.behaviours.put(0, new AttackBehaviour());
-        this.addCapability(ActorType.SPIDER);
     }
 
     @Override
@@ -42,7 +41,6 @@ public class HuntsmanSpider extends Actor{
         ActionList actions = super.allowableActions(otherActor, direction, map); // will return new ActionList()
         if (otherActor.hasCapability(Status.HOSTILE_TO_ENEMY)) {
             actions.add(new AttackAction(this, direction));
-
         }
         return actions;
     }
