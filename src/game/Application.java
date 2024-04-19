@@ -14,6 +14,7 @@ import game.grounds.trees.MatureTree;
 import game.grounds.trees.SaplingTree;
 import game.items.LargeBolt;
 import game.items.MetalSheet;
+import game.utils.FancyMessage;
 import game.weapons.MetalPipe;
 
 /**
@@ -52,14 +53,14 @@ public class Application {
         GameMap gameMap = new GameMap(groundFactory, map);
         world.addGameMap(gameMap);
 
-//        for (String line : FancyMessage.TITLE.split("\n")) {
-//            new Display().println(line);
-//            try {
-//                Thread.sleep(200);
-//            } catch (Exception exception) {
-//                exception.printStackTrace();
-//            }
-//        }
+        for (String line : FancyMessage.TITLE.split("\n")) {
+            new Display().println(line);
+            try {
+                Thread.sleep(200);
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
 
         gameMap.at(12, 10).addItem(new LargeBolt());
         gameMap.at(13, 10).addItem(new LargeBolt());
@@ -67,15 +68,13 @@ public class Application {
         gameMap.at(6, 3).addItem(new MetalSheet());
         gameMap.at(22, 6).addItem(new MetalSheet());
         gameMap.at(7, 13).addItem(new MetalSheet());
-//        gameMap.at(15, 8).addActor(new HuntsmanSpider());
         gameMap.at(15, 9).addItem(new MetalPipe());
         Crater crater = new Crater(new SpiderSpawner());
         gameMap.at(1,1).setGround(crater);
+        gameMap.at(2,2).setGround(crater);
+        gameMap.at(3,3).setGround(crater);
+        gameMap.at(4,4).setGround(crater);
 
-//        gameMap.at(14, 9).addActor(new HuntsmanSpider());
-//        gameMap.at(7, 9).addActor(new HuntsmanSpider());
-//        gameMap.at(12, 9).addActor(new HuntsmanSpider());
-//        gameMap.at(13, 9).addActor(new HuntsmanSpider());
 
 
         Player player = new Player("Intern", '@', 4);
