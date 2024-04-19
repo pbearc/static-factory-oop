@@ -1,4 +1,4 @@
-package game.actors.actorspawner;
+package game.actors.actorspawners;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.actors.HuntsmanSpider;

@@ -1,4 +1,4 @@
-package game.items.itemspawner;
+package game.items.itemspawners;
 
 import edu.monash.fit2099.engine.positions.Location;
 import game.items.fruits.SmallFruit;

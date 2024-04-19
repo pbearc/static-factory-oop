@@ -2,8 +2,8 @@ package game.grounds.trees;
 
 import edu.monash.fit2099.engine.positions.Exit;
 import edu.monash.fit2099.engine.positions.Location;
-import game.items.itemspawner.ItemSpawner;
-import game.items.itemspawner.BigFruitSpawner;
+import game.items.itemspawners.ItemSpawner;
+import game.items.itemspawners.BigFruitSpawner;
 
 import java.util.ArrayList;
 import java.util.Collections;
