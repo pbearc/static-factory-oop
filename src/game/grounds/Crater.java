@@ -1,13 +1,13 @@
 package game.grounds;
 
 import edu.monash.fit2099.engine.positions.Location;
-import game.actors.SpawnableActor;
+import game.spawners.Spawner;
 
 public class Crater extends SpawningGround {
 
-    private SpawnableActor spawnableActor;
+    private Spawner spawnableActor;
 
-    public Crater(SpawnableActor spawnableActor) {
+    public Crater(Spawner spawnableActor) {
         super('u');
         this.spawnableActor = spawnableActor;
     }

@@ -18,7 +18,7 @@ import game.actions.AttackAction;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HuntsmanSpider extends Actor implements SpawnableActor {
+public class HuntsmanSpider extends Actor{
     private Map<Integer, Behaviour> behaviours = new HashMap<>();
 
     public HuntsmanSpider() {
@@ -52,8 +52,4 @@ public class HuntsmanSpider extends Actor implements SpawnableActor {
         return new IntrinsicWeapon(1, "kicks", 25);
     }
 
-    @Override
-    public void spawn(Location location) {
-        location.addActor(new HuntsmanSpider());
-    }
 }
